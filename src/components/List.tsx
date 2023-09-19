@@ -102,6 +102,15 @@ const List = () => {
     }
   };
 
+  const handleRefreshData = () => {
+    if (pageNumber === 1) {
+      fetchData();
+    } else {
+      setPageNumber(1);
+    }
+
+  }
+
   return (
     <>
       <NavBar />
@@ -154,7 +163,7 @@ const List = () => {
       <Grid container spacing={1} marginLeft={2}>
         {list.map((item: IListItem) => (
           <Grid item xs={3} key={item.id}>
-            <EventCard data={item} setPageNumber={setPageNumber} />
+            <EventCard data={item} refreshData={handleRefreshData} />
           </Grid>
         ))}
       </Grid>

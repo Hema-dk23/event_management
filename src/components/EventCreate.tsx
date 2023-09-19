@@ -130,7 +130,7 @@ export const EventCreate = () => {
             required={true}
             value={form.category_id}
             onChange={(event) =>
-              updateForm("category_id", event.target.value.toString())
+              updateForm("category_id", Number(event.target.value))
             }
             fullWidth
           >

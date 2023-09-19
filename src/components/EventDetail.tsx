@@ -139,7 +139,6 @@ export const EventDetail = () => {
         title={STATIC_TEXT.informationTitle}
         description={STATIC_TEXT.registerSuccessMessage}
         showCancel={false}
-        handleOk={() => {}}
       />
     </>
   );

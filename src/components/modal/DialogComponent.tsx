@@ -43,7 +43,7 @@ const DialogComponent = ({
           OK
         </Button>
         {showCancel && (
-          <Button onClick={() => setOpen(false)} autoFocus>
+          <Button onClick={() => setOpen(false)}>
             Cancel
           </Button>
         )}

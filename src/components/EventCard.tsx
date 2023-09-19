@@ -20,11 +20,11 @@ import { BASE_URL } from "../consts/config";
 
 interface IProps {
   data: IListItem;
-  setPageNumber: (index: number) => void;
+  refreshData: () => void;
 }
 export const EventCard: FC<IProps> = ({
   data: { id, title, description, image_path, startdatetime },
-  setPageNumber,
+  refreshData,
 }) => {
   const { userRole } = useContext(UserContext);
   const navigate = useNavigate();
@@ -44,10 +44,10 @@ export const EventCard: FC<IProps> = ({
 
   const handleSuccess = () => {
     navigate("/");
-    setPageNumber(1);
-  }
+    refreshData();
+  };
 
-// This is card component to show information regarding events
+  // This is card component to show information regarding events
   return (
     <>
       <Card sx={{ width: "300px", height: "275px", my: "10px" }}>
@@ -81,7 +81,7 @@ export const EventCard: FC<IProps> = ({
             {description} <br />
           </Typography>
           <Typography sx={{ fontWeight: 300 }}>
-            {new Date(startdatetime).toLocaleString("en-GB").slice(0, -3)} CET{" "}
+            {new Date(startdatetime).toLocaleString("en-GB").slice(0, -3)} CET
           </Typography>
         </CardContent>
         <CardActions>
@@ -89,18 +89,16 @@ export const EventCard: FC<IProps> = ({
             <Button size="small" onClick={() => navigate(`/${id}`)}>
               {STATIC_TEXT.btnLearnMore}
             </Button>
-            <Box>
-              {userRole === "ROLE_ADMIN" && (
+            {userRole === "ROLE_ADMIN" && (
+              <Box>
                 <IconButton>
                   <EditIcon onClick={() => navigate(`/update/${id}`)} />
                 </IconButton>
-              )}
-              {userRole === "ROLE_ADMIN" && (
                 <IconButton onClick={() => setConfirmOpen(true)}>
                   <DeleteIcon />
                 </IconButton>
-              )}
-            </Box>
+              </Box>
+            )}
           </Box>
         </CardActions>
       </Card>
