@@ -9,14 +9,14 @@ import {
   Button,
   Typography,
 } from "@mui/material";
-import type { IListItem } from "../types";
+import type { IListItem } from "../../types";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../contexts/userContext";
+import { UserContext } from "../../contexts/userContext";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import DialogComponent from "./modal/DialogComponent";
-import { STATIC_TEXT } from "../consts/staticText";
-import { BASE_URL } from "../consts/config";
+import DialogComponent from "../modal/DialogComponent";
+import { STATIC_TEXT } from "../../consts/staticText";
+import { BASE_URL } from "../../consts/config";
 
 interface IProps {
   data: IListItem;
@@ -50,7 +50,7 @@ export const EventCard: FC<IProps> = ({
   // This is card component to show information regarding events
   return (
     <>
-      <Card sx={{ width: "300px", height: "275px", my: "10px" }}>
+      <Card sx={{ width: '90%', height: "275px", my: "10px" }}>
         <CardMedia sx={{ height: 80 }} image={image_path} />
         <CardContent>
           <Typography

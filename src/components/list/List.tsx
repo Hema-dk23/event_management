@@ -12,15 +12,15 @@ import {
   Popper,
   Typography,
 } from "@mui/material";
-import NavBar from "./NavBar";
-import type { ICategory, IListItem } from "../types";
+import NavBar from "../NavBar";
+import type { ICategory, IListItem } from "../../types";
 import { Search } from "@mui/icons-material";
-import { UserContext } from "../contexts/userContext";
+import { UserContext } from "../../contexts/userContext";
 import { useNavigate } from "react-router-dom";
-import { BASE_URL } from "../consts/config";
-import { DAY_FILTER, STATIC_TEXT } from "../consts/staticText";
+import { BASE_URL } from "../../consts/config";
+import { DAY_FILTER, STATIC_TEXT } from "../../consts/staticText";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { prepareUrl } from "../helper/utils";
+import { prepareUrl } from "../../helper/utils";
 
 // This component shows list of events and uses EventCard component to show each Card
 const List = () => {

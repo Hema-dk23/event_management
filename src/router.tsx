@@ -1,7 +1,7 @@
 import {
   createBrowserRouter,
 } from "react-router-dom";
-import List from "./components/List";
+import List from "./components/list/List";
 import { EventDetail } from "./components/EventDetail";
 import { EventCreate } from "./components/EventCreate";
 
